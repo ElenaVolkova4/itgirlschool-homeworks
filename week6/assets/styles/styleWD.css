@@ -1,0 +1,257 @@
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: rgba(52, 84, 122, 1);
+}
+
+h1 {
+    grid-area: h1;
+    font-family: 'roboto', serif;
+    font-size: 48pt;
+    font-weight: bold;
+    color: black;
+}
+
+p {
+    font-family: 'roboto', serif;
+    font-size: 16pt;
+}
+
+h3 {
+    font-family: 'roboto', serif;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+video {
+    width: 100%;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "name email"
+        "mess mess"
+        "send send";
+    gap: 15px;
+}
+
+
+.grey {
+    background-color: rgba(238, 239, 241, 1);
+}
+
+#logo {
+    width: 96px;
+    height: 60px;
+    padding-left: 200px;
+    padding-top: 57px;
+    padding-right: 90px;
+}
+
+.navlink {
+    padding: 20px;
+    font-family: 'roboto', serif;
+    font-size: 16pt;
+    color: black;
+}
+
+.firstscreen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+        "laptop h1"
+        "laptop p1"
+        "laptop wm";
+    padding-top: 100px;
+    padding-bottom: 100px;
+    column-gap: 50px;
+}
+
+#laptop {
+    grid-area: laptop;
+    width: 357px;
+    height: 233.7px;
+    justify-self: end;
+}
+
+#p1 {
+    grid-area: p1;
+}
+
+#wm {
+    grid-area: wm;
+    padding: 1rem 1.5rem;
+    margin: 10px 100px 100px 0px;
+    font-family: 'roboto', serif;
+    font-size: 16pt;
+    color: white;
+    background-color: rgba(52, 84, 122, 1);
+}
+
+.aboutme {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 200px 40px 200px;
+    text-align: center;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 200px 40px 200px;
+    background-color: rgba(52, 84, 122, 1);
+}
+
+.projectsimg {
+    width: 15%;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "myskills myfoto"
+        "adobe1   myfoto"
+        "adobe2   myfoto"
+        "adobe3   myfoto";
+    margin: 70px 200px 70px 200px;
+    justify-items: start;
+    column-gap: 50px;
+}
+
+.adobe1 {
+    grid-area: adobe1;
+}
+
+.adobe2 {
+    grid-area: adobe2;
+}
+
+.adobe3 {
+    grid-area: adobe3;
+}
+
+.myskills {
+    grid-area: myskills;
+}
+
+#myfoto {
+    grid-area: myfoto;
+    width: 100%;
+}
+
+.work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 200px 40px 200px;
+    text-align: center;
+    background-color: rgba(238, 239, 241, 1);
+}
+
+#desk {
+    width: 100vw;
+}
+
+.ms {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 200px 40px 200px;
+}
+
+.msimg {
+    width: 15%;
+}
+
+.web {
+    padding: 40px 200px 40px 200px;
+    background-color: rgba(238, 239, 241, 1);
+}
+
+#want {
+    text-align: center;
+}
+
+#want2 {
+    text-align: center;
+
+}
+
+#name {
+    grid-area: name;
+    height: 50px;
+    padding-left: 15px;
+    font-family: 'roboto', serif;
+    font-size: 14pt;
+    color: rgba(95, 93, 93, 1);
+    border: none;
+}
+
+#email {
+    grid-area: email;
+    height: 50px;
+    padding-left: 15px;
+    font-family: 'roboto', serif;
+    font-size: 14pt;
+    color: rgba(95, 93, 93, 1);
+    border: none;
+}
+
+#message {
+    grid-area: mess;
+    height: 175px;
+    padding-left: 15px;
+    font-family: 'roboto', serif;
+    font-size: 14pt;
+    color: rgba(95, 93, 93, 1);
+    border: none;
+
+}
+
+#send {
+    grid-area: send;
+    height: 40px;
+    width: 190px;
+    justify-self: center;
+    font-family: 'roboto', serif;
+    font-size: 16pt;
+    color: white;
+    background-color: rgba(52, 84, 122, 1);
+    border: none;
+
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "fi vk"
+        "cr vk";
+    padding: 40px 200px 40px 200px;
+    background-color: rgba(52, 84, 122, 1);
+    color: white;
+}
+
+#fi {
+    grid-area: fi;
+    font-size: 21pt;
+    font-weight: bold;
+}
+
+#copyright {
+    grid-area: cr;
+}
+
+#vk {
+    grid-area: vk;
+    justify-self: end;
+    width: 70%;
+}
