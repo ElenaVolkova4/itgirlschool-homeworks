@@ -85,8 +85,10 @@ form {
 
 #wm {
     grid-area: wm;
+}
+
+#wm>a {
     padding: 1rem 1.5rem;
-    margin: 10px 100px 100px 0px;
     font-family: 'roboto', serif;
     font-size: 16pt;
     color: white;
