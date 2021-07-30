@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding-left: 10%;
+            padding-right: 10%;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            font-family: 'Segoe UI', Verdana, sans-serif;
+        }
+
+        p {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .eula {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .registration_form {
+            /* max-width: 400px;
+            margin: auto;
+            padding-left: 10%;
+            padding-right: 10%; */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .errorMessage {
+            color: red;
+            font-size: 10px;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 7px;
+            box-shadow: none;
+            border-radius: 5px;
+            border: 0.5px solid #3A3A3A;
+            font-size: 15.9955px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <p>Регистрация</p>
+        <div class="registration_form">
+
+            <div class="field">
+                <label for="user_name">Ваше имя:</label>
+                <input id="user_name" placeholder="Имя" type="text" />
+                <div id="errorMessage_user_name" class="errorMessage"></div>
+            </div>
+
+            <div class="field">
+                <label for="user_surname">Ваша фамилия:</label>
+                <input id="user_surname" placeholder="Фамилия" type="text" />
+                <div id="errorMessage_user_surname" class="errorMessage"></div>
+
+            </div>
+            <div class="field">
+                <label for="birthdate">День Вашего рождения:</label>
+                <input id="birthdate" type="date" />
+                <div id="errorMessage_birthdate" class="errorMessage"></div>
+            </div>
+
+            <div class="field">
+                <label for="email">Ваш e-mail:</label>
+                <input id="email" placeholder="email@mail.ru" />
+                <div id="errorMessage_email" class="errorMessage"></div>
+            </div>
+
+            <div class="field">
+                <label for="mobile_number">Ваш номер мобильного телефона в формате 89031111111:</label>
+                <input id="mobile_number" placeholder="Номер мобильного телефона" />
+                <div id="errorMessage_mobile_number" class="errorMessage"></div>
+            </div>
+
+            <div class="field">
+                <label for="user_password">Придумайте пароль:</label>
+                <input id="user_password" placeholder="Пароль" type="password" autocomplete="new-password" />
+                <div id="errorMessage_user_password" class="errorMessage"></div>
+
+            </div>
+
+            <div class="field">
+                <label for="repeat_user_password">Повторите пароль:</label>
+                <input id="repeat_user_password" placeholder="Повторите пароль" type="password"
+                    autocomplete="new-password" />
+                <div id="errorMessage_repeat_user_password" class="errorMessage"></div>
+
+            </div>
+            <div class="field">
+                <div class="eula">
+                    <input id="eula_accepted" type="checkbox" />
+                    <label for="eula_accepted">Я принимаю условия <a href="#">Пользовательского соглашения</a></label>
+                </div>
+                <div id="errorMessage_eula_accepted" class="errorMessage"></div>
+            </div>
+            <button class="btn" type="button" onclick="check()">Зарегистрироваться</button>
+
+        </div>
+    </form>
+
+    <script src="formweek15.js"></script>
+</body>
+
+</html>

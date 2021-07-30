@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(236, 217, 208);
+        }
+
+        button {
+            border: 0;
+            text-align: center;
+            padding: 20px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            background: #ce1d7ebb;
+            color: black;
+        }
+
+        #resultDivision {
+            width: 150px;
+            height: 60px;
+            border: 1px solid blueviolet;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="firstnumber">Введите первое число:</label>
+    <input type="text" id="firstnumber" placeholder="введите число" name="input"><br>
+
+    <label for="secondnumber">Введите второе число:</label>
+    <input type="text" id="secondnumber" placeholder="введите число" name="input">
+
+    <p>Выберите действие и нажмите на "=":</p>
+
+    <div class="flex">
+        <button onclick="sum()">+</button>
+        <button onclick="resultSum()">=</button>
+        <input type="text" id="resultSum" name="input">
+    </div>
+
+    <div class="flex">
+        <button onclick="subtract ()">-</button>
+        <button onclick="resultSubtract()">=</button>
+        <input type="text" id="resultSubtract" name="input">
+    </div>
+
+    <div class="flex">
+        <button onclick="multiplication ()">*</button>
+        <button onclick="resultMultiplication()">=</button>
+        <input type="text" id="resultMultiplication" name="input">
+    </div>
+
+    <div class="flex">
+        <button onclick="division ()">/</button>
+        <button onclick="resultDivision()">=</button>
+        <div id="resultDivision"></div>
+        <!-- <input type="text" id="resultDivision" name="input"> -->
+        <!-- решила попробовать div -->
+    </div>
+
+    <button type="button" onclick="clearAllInput()">Начать сначала</button>
+
+    <button type="button" id="clearButton">Начать сначала</button>
+
+
+    <script src="calcweek15.js"></script>
+</body>
+
+</html>
