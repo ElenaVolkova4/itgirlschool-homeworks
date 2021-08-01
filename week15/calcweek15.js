@@ -89,13 +89,13 @@ function isNum1Valid(num1) {
     return !Number.isNaN(Number(num1));
 }
 
-function isNum2Valid(num2) {
-    return !Number.isNaN(Number(num2));
-}
+// function isNum2Valid(num2) {
+//     return !Number.isNaN(Number(num2));
+// } эта функция осуществляют одну и ту же логику, что и isNum1Valid
 
 function sum() {
     let [num1, num2] = addnum();
-    if (isNum1Valid(num1) && isNum2Valid(num2)) {
+    if (isNum1Valid(num1) && isNum1Valid(num2)) {
         return Number(num1) + Number(num2)
     } else {
         alert("Введенные значения должны быть цифрами!")

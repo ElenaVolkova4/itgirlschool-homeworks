@@ -26,13 +26,13 @@ form.isValid = true;
     if (user_name.value == '') {
         document.getElementById('errorMessage_user_name').innerHTML += "Пожалуйста, укажите Ваше имя<br>";
         form.isValid = false;
-
     }
 
     if (user_surname.value == '') {
         document.getElementById('errorMessage_user_surname').innerHTML += "Пожалуйста, укажите Вашу фамилию<br>";
         form.isValid = false;
     }
+
     if (birthdate.value == '') {
         document.getElementById('errorMessage_birthdate').innerHTML += "Пожалуйста, укажите дату Вашего рождения<br>";
         form.isValid = false;
@@ -41,20 +41,26 @@ form.isValid = true;
     if (email.value == '') {
         document.getElementById('errorMessage_email').innerHTML += "Пожалуйста, укажите Ваш e-mail<br>";
         form.isValid = false;
-
     }
 
     if (mobile_number.value == '') {
         document.getElementById('errorMessage_mobile_number').innerHTML += "Пожалуйста, укажите Ваш номер мобильного телефона<br>";
         form.isValid = false;
-
     }
 
-    if (mobile_number.value.length <= 11 && mobile_number.value.length >= 1) {
-        document.getElementById('errorMessage_mobile_number').innerHTML += "Ваш номер мобильного телефона должен содержать 11 цифр<br>";
-        form.isValid = false;
+    // if (mobile_number.value.length <= 10 && mobile_number.value.length >= 1) {
+    //     document.getElementById('errorMessage_mobile_number').innerHTML += "Ваш номер мобильного телефона должен содержать 11 цифр<br>";
+    //     form.isValid = false;
+    // } неправильно
 
-    }
+
+// не срабатывает
+if (mobile_number.value.length <= 10 && mobile_number.value.length >= 12) {
+    document.getElementById('errorMessage_mobile_number').innerHTML += "Ваш номер мобильного телефона должен содержать 11 цифр<br>";
+    form.isValid = false;
+}
+
+
 
     if (user_password.value.length <= 5) {
         document.getElementById('errorMessage_user_password').innerHTML += "Ваш пароль не безопасен, введите не менее 6 символов<br>";
