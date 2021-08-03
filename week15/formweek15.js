@@ -54,8 +54,7 @@ form.isValid = true;
     // } неправильно
 
 
-// не срабатывает
-if (mobile_number.value.length <= 10 && mobile_number.value.length >= 12) {
+if (mobile_number.value.length !== 11) {
     document.getElementById('errorMessage_mobile_number').innerHTML += "Ваш номер мобильного телефона должен содержать 11 цифр<br>";
     form.isValid = false;
 }
