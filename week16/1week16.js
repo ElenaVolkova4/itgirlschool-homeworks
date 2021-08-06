@@ -11,8 +11,8 @@ function sumInput() {
     console.log(numbers); //вывод массива (для себя)
 
     //сортировка
-    function compareNumbers(a, b) {
-        return a - b;
+    function compareNumbers(num1, num2) {
+        return num1 - num2;
     }
     numbers.sort(compareNumbers);
 
@@ -35,8 +35,8 @@ function sumInput2() {
     }
 
     //сортировка
-    function compareNumbers2(a, b) {
-        return a - b;
+    function compareNumbers(num1, num2) {
+        return num1 - num2;
     }
     numbers2.sort(compareNumbers2);
 
