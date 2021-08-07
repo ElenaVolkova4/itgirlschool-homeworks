@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Узнайте стоимость своего автомобиля!(в усл.ед.)</h1>
+    <div class="container">
+        <select class="car-brand">
+            <option value="" selected disabled hidden>Марка</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="lexus">Lexus</option>
+        </select>
+
+        <select class="car-model" disabled>
+            <option value="" selected disabled hidden>Модель</option>
+        </select>
+        <select class="car-release-year" disabled>
+            <option value="" selected disabled hidden>Год выпуска</option>
+        </select>
+        <select class="car-conf" disabled>
+            <option value="" selected disabled hidden>Комплектация</option>
+            <option value="base">Базовая</option>
+            <option value="average">Средняя</option>
+            <option value="max">Максимальная</option>
+
+            <!-- сделать disabled=false? когда выберется модель-->
+        </select>
+
+        <input type="text" placeholder="Пробег, км" />
+    </div>
+    <!-- disabled не активный -->
+    <button type="button" id="calcCar">Узнать стоимость</button>
+    <div id="price"></div>
+    <script src="calcCars.js">
+    </script>
+</body>
+
+</html>

@@ -35,7 +35,7 @@ function sumInput2() {
     }
 
     //сортировка
-    function compareNumbers(num1, num2) {
+    function compareNumbers2(num1, num2) {
         return num1 - num2;
     }
     numbers2.sort(compareNumbers2);
