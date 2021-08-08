@@ -33,6 +33,12 @@ carBrandSelect.addEventListener("change", (e) => {
 
     const modelsSelect = document.querySelector(".car-model");
     modelsSelect.innerHTML = "";
+
+//добавление автоматически выбранного элемента
+    const defaultModel = document.createElement("option");
+    defaultModel.innerText = "Модель";
+    modelsSelect.appendChild(defaultModel);
+
     carModelsNames.forEach(model => {
         const newOption = document.createElement("option");
         newOption.value = model;
@@ -46,39 +52,25 @@ carBrandSelect.addEventListener("change", (e) => {
 
 
 // поле Год выпуска
-const carReleaseYearSelect = document.querySelector(".car-release-year");
+const carReleaseYearSelect = document.querySelector(".car-model");
 carReleaseYearSelect.addEventListener("change", (e) => {
-    const currentSelection = e.currentTarget.value; //могу снова использовать? какую модель выберем
+    const currentSelection = e.currentTarget.value; //какую модель выберем
 
-    // const carBrand = document.querySelector(".car-brand").value;
-    // const carModel = document.querySelector(".car-model").value;
-    // // const carModelsData = getCarModelDataByBrand(carBrand);
-    // const carReleaseYearData = carModelsData.map(releaseYear => releaseYear[2]);//вытягиваем третий элемент (то есть весь массив с годами)
-   
-    // или???
-    const carReleaseYearData = getCarReleaseYearDataByModel(currentSelection); 
-
-    function getCarReleaseYearDataByModel(model) {
-        let carReleaseYearData = [];
-        if (model === "A-class") carReleaseYearData = MERCEDES_MODELS[0],[2];
-        else if (model === "B-class") carReleaseYearData = AUDI_MODELS[1],[2];
-        else if (model === "C-class") carReleaseYearData = BMW_MODELS[2],[2];
-        return carReleaseYearData;
-    }
-// ...
-
-   
-    // const carModel = document.querySelector(".car-model").value; //нужно?
-    // const carReleaseYearData = carModelsData.find(releaseYear => releaseYear[2] === releaseYear); //вытягиваем масив с годами
-
-    // или так?
-    // const carReleaseYears = carReleaseYearData.map(carData => carData[2]); // вытягиваем третий элемент из всех массивов (то есть весь массив с годами)
+    const carBrand = document.querySelector(".car-brand").value;
+    const carModelsData = getCarModelDataByBrand(carBrand);
+    const yearsForModel = carModelsData.find(model => model[0] === currentSelection)[2];
 
 
     // создаем options
     const ReleaseYearSelect = document.querySelector(".car-release-year");
     ReleaseYearSelect.innerHTML = "";
-    carReleaseYears.forEach(year => {
+
+    //добавление автоматически выбранного элемента
+    const defaultReleaseYear = document.createElement("option");
+    defaultReleaseYear.innerText = "Год выпуска";
+    ReleaseYearSelect.appendChild(defaultReleaseYear);
+
+    yearsForModel.forEach(year => {
         const newOption = document.createElement("option");
         newOption.value = year;
         newOption.innerText = year;
