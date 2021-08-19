@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(186, 225, 240);
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        label {
+            color: rgb(34, 34, 190);
+        }
+
+        #user_fio {
+            width: 200px;
+        }
+
+        .form {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid blue;
+            border-radius: 5px;
+        }
+
+        .user_fio {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+
+        .user_right_fio {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="form">
+        <div class="user_fio">
+            <label for="user_fio">Введите Ваше ФИО:</label>
+            <input id="user_fio" placeholder="ФИО" type="text" />
+            <button class="btn" type="button" onclick="check()">Готово</button>
+
+        </div>
+
+
+        <div class="user_right_fio">
+            <div class="field">
+                <label for="user_name">Фамилия:</label>
+                <div id="user_name"></div>
+            </div>
+            <div class="field">
+                <label for="user_surname">Имя:</label>
+                <div id="user_surname"></div>
+            </div>
+            <div class="field">
+                <label for="user_middle_name">Отчество:</label>
+                <div id="user_middle_name"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="1week17.js"></script>
+
+
+</body>
+
+</html>

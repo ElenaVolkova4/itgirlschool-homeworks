@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            /* width: 500px;
+            height: 700px; */
+
+            max-width: 600px;
+            margin: auto;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid grey;
+        }
+
+        #comments {
+            width: 400px;
+            height: 500px;
+            border: 1px solid grey;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #comment {
+            /* margin-left: 10%;
+            margin-right: 10%; */
+
+            width: 400px;
+            height: 200px;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 7px 41px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+
+        <div id="comments"></div>
+
+        <div class="container">
+            <label for="comment">Введите комментарии:</label>
+            <input id="comment" placeholder="Текст" />
+
+        </div>
+        <button class="btn" type="button" onclick="check()">Отправить</button>
+
+    </section>
+
+
+    <script src="2week17.js"></script>
+</body>
+
+</html>
