@@ -114,7 +114,7 @@ function check() {
     //     };
     //     let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
-    //     if (mailFormat.test(email) == true) {
+    //     if (mailFormat.test(email) !== true) {
     //         document.getElementById('errorMessage_email').innerHTML += "Адрес электронной почты должен содержать символ @ и часть адреса после @<br>";
     //         form.isValid = false;
     //         email.style.border = '1px solid red';
@@ -174,7 +174,7 @@ function check() {
 
         let user_passwordFormat = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{6,}$/;
 
-        if (user_passwordFormat.test(user_password) == true) {
+        if (user_passwordFormat.test(user_password) !== true) {
             document.getElementById('errorMessage_user_password').innerHTML += "Ваш пароль не безопасен, введите не менее 6 символов, содержащих не менее 1 цифры, 1 заглавной буквы и 1 специального символа(!,@,$,&,#,*)<br>";
             form.isValid = false;
             user_password.style.border = '1px solid red';
