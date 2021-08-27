@@ -23,24 +23,6 @@
 
 
 // пришлось писать для каждого поля
-// ------------------------------------------------------------------------
-
-
-
-
-let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-
-
-console.log(mailFormat.test('tigra_v_kletke@mail.ru'));
-
-if (mailFormat.test('tigra_v_kletke@mail.ru') == true) {
-    console.log("not Ok");
-} else {
-    console.log("Ok");
-
-};
-
-
 
 function check() {
 
@@ -78,6 +60,7 @@ function check() {
     };
     checkInputUserName();
 
+
     //валидация поля Фамилия
     function checkInputUserSurname() {
         if (user_surname.validity.valueMissing) {
@@ -103,47 +86,22 @@ function check() {
     };
     checkInputBirthdate();
 
+
     //валидация поля email
-    // function checkInputEmail() {
-    //     if (email.validity.valueMissing) {
-    //         document.getElementById('errorMessage_email').innerHTML += "Пожалуйста, укажите Ваш e-mail<br>";
-    //         form.isValid = false;
-    //         email.style.border = '1px solid red';
-    //     } else {
-    //         email.style.border = '1px solid green';
-    //     };
-    //     let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-
-    //     if (mailFormat.test(email) !== true) {
-    //         document.getElementById('errorMessage_email').innerHTML += "Адрес электронной почты должен содержать символ @ и часть адреса после @<br>";
-    //         form.isValid = false;
-    //         email.style.border = '1px solid red';
-    //     } else {
-    //         email.style.border = '1px solid green'; //почему не становится зеленым????? не срабатывает, хотя отдельно работает
-    //     }
-
-    // };
-    // checkInputEmail();
-
-
-
-    // или все в однуо условие else...if?
     function checkInputEmail() {
-                let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+        let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
         if (email.validity.valueMissing) {
             document.getElementById('errorMessage_email').innerHTML += "Пожалуйста, укажите Ваш e-mail<br>";
             form.isValid = false;
             email.style.border = '1px solid red';
-        } else if (mailFormat.test(email) !== true) {
+        } else if (mailFormat.test(email.value) !== true) {
             document.getElementById('errorMessage_email').innerHTML += "Адрес электронной почты должен содержать символ @ и часть адреса после @<br>";
             form.isValid = false;
             email.style.border = '1px solid red';
-        } 
-        else {
-            email.style.border = '1px solid green'; //почему не становится зеленым????? не срабатывает, хотя отдельно работает
+        } else {
+            email.style.border = '1px solid green';
         }
-
     };
     checkInputEmail();
 
@@ -163,26 +121,23 @@ function check() {
 
     //валидация поля пароль
     function checkInputUserPassword() {
+        let user_passwordFormat = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{6,}$/;
 
         if (user_password.validity.valueMissing) {
             document.getElementById('errorMessage_user_password').innerHTML += "Введите пароль<br>";
             form.isValid = false;
             user_password.style.border = '1px solid red';
-        } else {
-            user_password.style.border = '1px solid green';
-        };
-
-        let user_passwordFormat = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{6,}$/;
-
-        if (user_passwordFormat.test(user_password) !== true) {
+        } else if (user_passwordFormat.test(user_password.value) !== true) {
             document.getElementById('errorMessage_user_password').innerHTML += "Ваш пароль не безопасен, введите не менее 6 символов, содержащих не менее 1 цифры, 1 заглавной буквы и 1 специального символа(!,@,$,&,#,*)<br>";
             form.isValid = false;
             user_password.style.border = '1px solid red';
         } else {
-            user_password.style.border = '1px solid green'; //почему не становится зеленым????? не срабатывает
+            user_password.style.border = '1px solid green';
         };
     };
+
     checkInputUserPassword();
+
 
     //валидация поля повторите пароль
     function checkInputRepeatUserPassword() {
@@ -191,34 +146,31 @@ function check() {
             document.getElementById('errorMessage_repeat_user_password').innerHTML += "Необходимо ввести пароль еще раз<br>";
             form.isValid = false;
             repeat_user_password.style.border = '1px solid red';
-        } else {
-            repeat_user_password.style.border = '1px solid green';
-        };
-
-
-        if (repeat_user_password.value != user_password.value) {
+        } else if (repeat_user_password.value != user_password.value) {
             document.getElementById('errorMessage_repeat_user_password').innerHTML += "Пароль не совпадает<br>";
             form.isValid = false;
             repeat_user_password.style.border = '1px solid red';
         } else {
             repeat_user_password.style.border = '1px solid green';
         };
-
     };
+
     checkInputRepeatUserPassword();
+
 
     //валидация поля соглашения
     function checkInputEulaAccepted() {
-    if (eula_accepted.checked == false) {
-        document.getElementById('errorMessage_eula_accepted').innerHTML += "Пожалуйста, внимательно прочтите Пользовательское соглашение и примите его условия, поставив галочку<br>";
-        form.isValid = false;
-        eula_accepted.style.boxShadow = '0 0 5px 1px red';
-    }     else {
-        eula_accepted.style.boxShadow = '0 0 5px 1px green';
-    };
+        if (eula_accepted.checked == false) {
+            document.getElementById('errorMessage_eula_accepted').innerHTML += "Пожалуйста, внимательно прочтите Пользовательское соглашение и примите его условия, поставив галочку<br>";
+            form.isValid = false;
+            eula_accepted.style.boxShadow = '0 0 5px 1px red';
+        } else {
+            eula_accepted.style.boxShadow = '0 0 5px 1px green';
+        };
 
     }
     checkInputEulaAccepted();
+
 
     //если вся форма заполнена верно:
     if (form.isValid == true) {
@@ -232,8 +184,9 @@ function check() {
         mobile_number.value = "";
         user_password.value = "";
         user_password.value = "";
-        urepeat_user_password.value = "";
-        eula_accepted.checked = false; //почему не работает????
+        repeat_user_password.value = "";
+        eula_accepted.checked = false;
+
 
         document.getElementById('errorMessage_user_name').innerHTML = "";
         document.getElementById('errorMessage_user_surname').innerHTML = "";
@@ -245,4 +198,3 @@ function check() {
         document.getElementById('errorMessage_eula_accepted').innerHTML = "";
     }
 };
-

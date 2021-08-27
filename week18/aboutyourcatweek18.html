@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href=" /cat.png" type="image/svg">
+    <title>Кто твой кот?</title>
+    <style>
+        input:required:valid {
+            border-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- валидация через HTML5:
+    - некоторые поля обязательны к заполнению
+    - в поле с типом number можно вводить только числа и только в указанном промежутке ]9от 0 до 25)
+    - значение в поле для указания email должно быть в определенном формате
+    - при заполнении обязательных полей они становятся зелеными
+    -->
+    <form>
+        <h1>Раскажи про своего кота!</h1>
+        <div>
+            <label for="name">Кличка питомца:</label>
+            <input type="text" id="name" title="Это поле является обязательным" required />*
+        </div>
+        <div>
+            <label for="age">Возраст питомца:</label>
+            <input type="number" id="age" max="25" />
+
+        </div>
+        <div>
+            <label for="nameowner">Имя владельца:</label>
+            <input type="text" id="nameowner" title="Это поле является обязательным" required />*
+        </div>
+        <div>
+            <label for="contact">Контакты владельца:</label>
+            <input type="email" id="contact" title="Это поле является обязательным" required placeholder="email" />*
+        </div>
+        <div> Порода:
+            <select>
+                <option value="6" selected="selected">-</option>
+                <option value="1">персидская</option>
+                <option value="2">британская</option>
+                <option value="3">сиамская</option>
+                <option value="4">благородная дворовая</option>
+                <option value="5">другая порода</option>
+            </select>
+        </div>
+        <div>
+            <p>Какой корм:</p>
+            <label><input type="checkbox" name="meal" value="meal1" />Сухой корм</label>
+            <label><input type="checkbox" name="meal" value="meal2" />Влажный корм</label>
+            <label><input type="checkbox" name="meal" value="meal3" />Натуральный корм</label>
+        </div>
+        <div> Пол:<br>
+            Самка<input type="radio" name="sex">
+            Самец<input type="radio" name="sex">
+        </div>
+
+        <div>Комментарии:<br>
+            <textarea rows="10" cols="30"></textarea>
+        </div>
+        <div>Приложи фотографию своего питомца</div>
+        <input type="file" /><br>
+
+        <button>Сохранить</button>
+        <input type="reset" value="Очистить форму" />
+    </form>
+
+
+</body>
+
+</html>
