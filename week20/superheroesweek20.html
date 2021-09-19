@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+    <title>Супергерои</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, rgb(229, 240, 238), rgb(243, 194, 201));
+        }
+
+        section {
+            max-width: 1400px;
+            margin: auto;
+            padding-left: 10%;
+            padding-right: 10%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+
+        span {
+            font-weight: normal;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .superHeroes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .rightSide {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #infoBatman,
+        #infoSuperman,
+        #infoIronman,
+        #infoDeadpool {
+            flex-grow: 1;
+            padding: 5px;
+            border: 2mm ridge rgb(138, 43, 226, 0.6);
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Супергерои современности</h1>
+    <section>
+        <div class="superHeroes">
+            <div class="hero">
+                <div class="pic">
+                    <img src="https://n1s1.hsmedia.ru/13/a5/b2/13a5b2373d5e23489d9a4949ada5b927/547x397_0xac120002_8752067681540468870.jpg"
+                        alt="Бэтмен"></div>
+                <div class="rightSide">
+                    <div id="infoBatman"></div>
+                    <select class="ratingBatman" onchange="chooseRatingBatman()">
+                        <option id="ratingBatman" value="" selected>Поставьте личную оценку супергерою!
+                        </option>
+                        <option value="&#9733;">&#9733;</option>
+                        <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="pic">
+                    <img src="https://n1s1.hsmedia.ru/06/d3/73/06d37321618034ec5f2a65b09c8576e3/547x397_0xac120002_45567661540468871.jpg"
+                        alt="Супермен"></div>
+                <div class="rightSide">
+                    <div id="infoSuperman"></div>
+                    <select class="ratingSuperman" onchange="chooseRatingSuperman()">
+                        <option id="ratingSuperman" value="" selected>Поставьте личную оценку супергерою!
+                        </option>
+                        <option value="&#9733;">&#9733;</option>
+                        <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="pic">
+                    <img src="https://n1s1.hsmedia.ru/7b/56/08/7b5608ec3df83d872fa1162fb9e32f28/547x397_0xac120002_1773711401540468871.jpg"
+                        alt="Железный человек"> </div>
+                <div class="rightSide">
+                    <div id="infoIronman"></div>
+                    <select class="ratingIronman" onchange="chooseRatingSIronman()">
+                        <option id="ratingIronman" value="" selected>Поставьте личную оценку супергерою!
+                        </option>
+                        <option value="&#9733;">&#9733;</option>
+                        <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="pic">
+                    <img src="https://n1s1.hsmedia.ru/34/93/39/3493392c94fc2ae0552ef9c7e87f2617/728x382_1_cc2a743fd686b7b2e256c062966bb465@1034x543_0xac120002_2692921231540468872.jpg"
+                        alt="Дэдпул"></div>
+                <div class="rightSide">
+                    <div id="infoDeadpool"></div>
+                    <select class="ratingDeadpool" onchange="chooseRatingDeadpool()">
+                        <option id="ratingDeadpool" value="" selected>Поставьте личную оценку супергерою!
+                        </option>
+                        <option value="&#9733;">&#9733;</option>
+                        <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+                        <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+    </section>
+
+
+    <script src="superheroesweek20.js"></script>
+</body>
+
+</html>
