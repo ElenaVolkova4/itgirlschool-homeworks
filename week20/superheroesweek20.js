@@ -28,14 +28,29 @@ let json = `[{
 //проверка
 let hero = JSON.parse(json);//парсим героя (переводим в объект)
 
-document.addEventListener("DOMContentLoaded", function (event) {
-showInfoBatman();
-showinfoSuperman();
-showinfoIronman();
-showinfoDeadpool();
-});
+//ВАРИАНТ 1
 
-//наверняка можно это объединить, но я не додумалась как
+// document.addEventListener("DOMContentLoaded", function (event) {
+// showInfoBatman();
+// showinfoSuperman();
+// showinfoIronman();
+// showinfoDeadpool();
+
+// if (localStorage.getItem('ratingBatman') != null)// если в локальном хранилище уже есть оценка, то..
+// {
+//     document.querySelector('.ratingBatman').selectedIndex = localStorage.getItem('ratingBatman');
+// }
+
+// if (localStorage.getItem('ratingSuperman') != null)// если в локальном хранилище уже есть оценка, то..
+// {
+//     document.querySelector('.ratingSuperman').selectedIndex = localStorage.getItem('ratingSuperman');
+// };
+
+// if (localStorage.getItem('ratingIronman') != null)// если в локальном хранилище уже есть оценка, то..
+// {
+//     document.querySelector('.ratingIronman').selectedIndex = localStorage.getItem('ratingIronman');
+// };
+
 
 
 function showInfoBatman() {
@@ -96,43 +111,99 @@ function showinfoDeadpool() {
 };
 
 
-function chooseRatingBatman() {
-    let savedRatingBatman = [];
+// ВАРИАНТ 2
+document.addEventListener("DOMContentLoaded", function (event) {
 
-    savedRatingBatman.push(document.querySelector('.ratingBatman').value);
-    if (localStorage.getItem('ratingBatman')===null)// есть ли в локальном хранилище сообщения
+
+let heroes = JSON.parse(json);//парсим героев (переводим в объект)
+
+let heroInfo = "";     //создаем место
+
+heroes.map(function(hero, i) {
+    // заполняем 
+    heroInfo += `<div class='info'>
+            <img class="img" alt="picture" src='${card.img}'>
+
+
+
+    <h2>${hero.heroName}</h2>
+    <div class='title'>Альтер эго: <span>${hero.alterEgo}</span></div>
+    <div class='title'>Вселенная: <span>${hero.universe}</span></div>
+    <div class='title'>Суперсилы: <span>${hero.superPower}</span></div>
+    <div class='title'>Подробнее: <span>${hero.details}</span></div>
+    </div>`
+    document.getElementById("container").innerHTML = heroInfo;  
+})
+});
+
+
+
+// от Кота пример
+
+// document.addEventListener("DOMContentLoaded", function (event) {
+//     // парсинг
+//     let comics = JSON.parse(json);
+//     console.log(comics);
+//     // создаем  место для героев
+//     let boxingForHeroes = "";
+
+//     // заполняем карточки героями
+
+//     for (let card of comics) {
+//         boxingForHeroes +=`<div class="cardHeroes">
+//         <img class="img" alt="picture" src='${card.img}'>
+//         <h2> ${card.name}</h2>
+//         <p><span class ="highlight"> Вселенная:</span> ${card.universe}</p>
+//         <p> <span class ="highlight"> Альтер эго:</span> ${card.alterEgo}</p>
+//         <p> <span class ="highlight">Род деятельности:</span> ${card.class}</p>
+//         <p> <span class ="highlight">Друзья: </span>${card.friends}</p>
+//         <p> <span class ="highlight">Суперсилы:</span> ${card.superPowers}</p>
+//         <p><span class ="highlight">Подробнее:</span>  ${card.info}</p>
+//         </div>`
+//     }
+//     // выводим карточки в див
+//     document.querySelector(".container").innerHTML = boxingForHeroes;
+// });
+
+
+
+
+
+
+//ОЦЕНКА
+
+function chooseRatingBatman() {
+
+    let savedRatingBatman = document.querySelector(".ratingBatman").selectedIndex;
+    if (localStorage.getItem('ratingBatman')===null)// если в локальном хранилище нет оценки
 {
     localStorage.setItem('ratingBatman', JSON.stringify(savedRatingBatman));//то добавляем оценку
-}};
+}
+};
 
 function chooseRatingSuperman() {
-    let savedRatingSuperman= [];
 
-    savedRatingSuperman.push(document.querySelector('.ratingSuperman').value);
-    if (localStorage.getItem('ratingSuperman')===null)// есть ли в локальном хранилище сообщения
+    let savedRatingBatman = document.querySelector(".ratingSuperman").selectedIndex;
+    if (localStorage.getItem('ratingSuperman')===null)// если в локальном хранилище нет оценки
 {
-    localStorage.setItem('ratingSuperman', JSON.stringify(savedRatingSuperman));//то добавляем оценку
-}};
-
+    localStorage.setItem('ratingSuperman', JSON.stringify(savedRatingBatman));//то добавляем оценку
+}
+};
 
 function chooseRatingSIronman() {
-    let savedRatingSIronman= [];
 
-    savedRatingSIronman.push(document.querySelector('.ratingIronman').value);
-    if (localStorage.getItem('ratingIronman')===null)// есть ли в локальном хранилище сообщения
+    let savedRatingBatman = document.querySelector(".ratingIronman").selectedIndex;
+    if (localStorage.getItem('ratingIronman')===null)// если в локальном хранилище нет оценки
 {
-    localStorage.setItem('ratingIronman', JSON.stringify(savedRatingSIronman));//то добавляем оценку
-}};
-
+    localStorage.setItem('ratingIronman', JSON.stringify(savedRatingBatman));//то добавляем оценку
+}
+};
 
 function chooseRatingDeadpool() {
-    let savedRatingDeadpool= [];
 
-    savedRatingDeadpool.push(document.querySelector('.ratingDeadpool').value);
-    if (localStorage.getItem('ratingDeadpool')===null)// есть ли в локальном хранилище сообщения
+    let savedRatingBatman = document.querySelector(".ratingDeadpool").selectedIndex;
+    if (localStorage.getItem('ratingDeadpool')===null)// если в локальном хранилище нет оценки
 {
-    localStorage.setItem('ratingDeadpool', JSON.stringify(savedRatingDeadpool));//то добавляем оценку
-}};
-
-
-
+    localStorage.setItem('ratingDeadpool', JSON.stringify(savedRatingBatman));//то добавляем оценку
+}
+};
