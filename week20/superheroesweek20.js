@@ -30,27 +30,27 @@ let hero = JSON.parse(json);//парсим героя (переводим в о�
 
 //ВАРИАНТ 1
 
-// document.addEventListener("DOMContentLoaded", function (event) {
-// showInfoBatman();
-// showinfoSuperman();
-// showinfoIronman();
-// showinfoDeadpool();
+document.addEventListener("DOMContentLoaded", function (event) {
+showInfoBatman();
+showinfoSuperman();
+showinfoIronman();
+showinfoDeadpool();
 
-// if (localStorage.getItem('ratingBatman') != null)// если в локальном хранилище уже есть оценка, то..
-// {
-//     document.querySelector('.ratingBatman').selectedIndex = localStorage.getItem('ratingBatman');
-// }
+if (localStorage.getItem('ratingBatman') != null)// если в локальном хранилище уже есть оценка, то..
+{
+    document.querySelector('.ratingBatman').selectedIndex = localStorage.getItem('ratingBatman');
+}
 
-// if (localStorage.getItem('ratingSuperman') != null)// если в локальном хранилище уже есть оценка, то..
-// {
-//     document.querySelector('.ratingSuperman').selectedIndex = localStorage.getItem('ratingSuperman');
-// };
+if (localStorage.getItem('ratingSuperman') != null)// если в локальном хранилище уже есть оценка, то..
+{
+    document.querySelector('.ratingSuperman').selectedIndex = localStorage.getItem('ratingSuperman');
+};
 
-// if (localStorage.getItem('ratingIronman') != null)// если в локальном хранилище уже есть оценка, то..
-// {
-//     document.querySelector('.ratingIronman').selectedIndex = localStorage.getItem('ratingIronman');
-// };
-
+if (localStorage.getItem('ratingIronman') != null)// если в локальном хранилище уже есть оценка, то..
+{
+    document.querySelector('.ratingIronman').selectedIndex = localStorage.getItem('ratingIronman');
+};
+});
 
 
 function showInfoBatman() {
@@ -111,64 +111,6 @@ function showinfoDeadpool() {
 };
 
 
-// ВАРИАНТ 2
-document.addEventListener("DOMContentLoaded", function (event) {
-
-
-let heroes = JSON.parse(json);//парсим героев (переводим в объект)
-
-let heroInfo = "";     //создаем место
-
-heroes.map(function(hero, i) {
-    // заполняем 
-    heroInfo += `<div class='info'>
-            <img class="img" alt="picture" src='${card.img}'>
-
-
-
-    <h2>${hero.heroName}</h2>
-    <div class='title'>Альтер эго: <span>${hero.alterEgo}</span></div>
-    <div class='title'>Вселенная: <span>${hero.universe}</span></div>
-    <div class='title'>Суперсилы: <span>${hero.superPower}</span></div>
-    <div class='title'>Подробнее: <span>${hero.details}</span></div>
-    </div>`
-    document.getElementById("container").innerHTML = heroInfo;  
-})
-});
-
-
-
-// от Кота пример
-
-// document.addEventListener("DOMContentLoaded", function (event) {
-//     // парсинг
-//     let comics = JSON.parse(json);
-//     console.log(comics);
-//     // создаем  место для героев
-//     let boxingForHeroes = "";
-
-//     // заполняем карточки героями
-
-//     for (let card of comics) {
-//         boxingForHeroes +=`<div class="cardHeroes">
-//         <img class="img" alt="picture" src='${card.img}'>
-//         <h2> ${card.name}</h2>
-//         <p><span class ="highlight"> Вселенная:</span> ${card.universe}</p>
-//         <p> <span class ="highlight"> Альтер эго:</span> ${card.alterEgo}</p>
-//         <p> <span class ="highlight">Род деятельности:</span> ${card.class}</p>
-//         <p> <span class ="highlight">Друзья: </span>${card.friends}</p>
-//         <p> <span class ="highlight">Суперсилы:</span> ${card.superPowers}</p>
-//         <p><span class ="highlight">Подробнее:</span>  ${card.info}</p>
-//         </div>`
-//     }
-//     // выводим карточки в див
-//     document.querySelector(".container").innerHTML = boxingForHeroes;
-// });
-
-
-
-
-
 
 //ОЦЕНКА
 
@@ -206,4 +148,4 @@ function chooseRatingDeadpool() {
 {
     localStorage.setItem('ratingDeadpool', JSON.stringify(savedRatingBatman));//то добавляем оценку
 }
-};
+}
