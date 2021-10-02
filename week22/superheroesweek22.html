@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="assets/styles/normalize.css"> -->
+    <title>Супергерои</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, rgb(191, 248, 238), rgb(243, 175, 185));
+        }
+
+        section {
+            max-width: 1400px;
+            margin: auto;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        img {
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+
+        span {
+            font-weight: normal;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .rightSide {
+            display: flex;
+            flex-direction: column;
+
+            flex-grow: 1;
+            padding: 5px;
+            border: 2mm ridge rgb(138, 43, 226, 0.6);
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Супергерои современности</h1>
+    <section>
+
+        <!-- <select class="ratingBatman" onchange="chooseRatingBatman()">
+            <option id="ratingBatman" value="" selected>Поставьте личную оценку супергерою!
+            </option>
+            <option value="&#9733;">&#9733;</option>
+            <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+        </select> -->
+
+        <!-- <select class="ratingSuperman" onchange="chooseRatingSuperman()">
+            <option id="ratingSuperman" value="" selected>Поставьте личную оценку супергерою!
+            </option>
+            <option value="&#9733;">&#9733;</option>
+            <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+        </select> -->
+
+
+
+        <!-- <select class="ratingIronman" onchange="chooseRatingSIronman()">
+            <option id="ratingIronman" value="" selected>Поставьте личную оценку супергерою!
+            </option>
+            <option value="&#9733;">&#9733;</option>
+            <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+        </select> -->
+
+        <!-- <select class="ratingDeadpool" onchange="chooseRatingDeadpool()">
+            <option id="ratingDeadpool" value="" selected>Поставьте личную оценку супергерою!
+            </option>
+            <option value="&#9733;">&#9733;</option>
+            <option value="&#9733;&#9733;">&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;</option>
+            <option value="&#9733;&#9733;&#9733;&#9733;&#9733;">&#9733;&#9733;&#9733;&#9733;&#9733;
+            </option>
+        </select> -->
+
+
+        <div id="container"></div>
+
+    </section>
+
+
+
+    <script src="superheroesweek22.js"></script>
+</body>
+
+</html>
